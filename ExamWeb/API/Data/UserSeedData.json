@@ -1,0 +1,82 @@
+[
+    {
+        "UserName": "Kamora",
+        "Role": "Student",
+        "Email": "stefarigop@gmail.com",
+        "FirstName": "Stefanos",
+        "LastName": "Rigopoulos",
+        "ProfilePhotoURL": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "Exams": [
+            {
+                "LessonName": "Προγραμματισμος Ι",
+                "ProfessorName": "Νικολαος Τσελικας",
+                "ExamGrade": 0,
+                "Subjects": [
+                    {
+                        "Header": "Θεμα 1 (3 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 1
+                    },
+                    {
+                        "Header": "Θεμα 2 (2 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 2
+                    },
+                    {
+                        "Header": "Θεμα 3 (1 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 0
+                    },
+                    {
+                        "Header": "Θεμα 4 (4 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 3
+                    }
+                ]
+            },
+            {
+                "LessonName": "Προγραμματισμος ΙΙ",
+                "ProfessorName": "Χρηστος Τρυφονοπουλος",
+                "ExamGrade": 0,
+                "Subjects": [
+                    {
+                        "Header": "Θεμα 1 (3 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 1
+                    },
+                    {
+                        "Header": "Θεμα 2 (2 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 1
+                    },
+                    {
+                        "Header": "Θεμα 3 (1 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 1
+                    },
+                    {
+                        "Header": "Θεμα 4 (4 Μοναδες)",
+                        "Wording": "Τι κανουμε εδω?",
+                        "Answer": "Yolo",
+                        "SubjectGrade": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "UserName": "Thanos",
+        "Role": "Professor",
+        "Email": "thanoskound2000@gmail.com",
+        "FirstName": "Thanos",
+        "LastName": "Koundouropoulo",
+        "ProfilePhotoURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    }
+]
