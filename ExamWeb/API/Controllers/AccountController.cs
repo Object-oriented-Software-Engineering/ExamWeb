@@ -21,12 +21,11 @@ namespace API.Controllers
 
         [HttpPost("register")]
         public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO){
-            if (await UserExists(registerDTO.Email, registerDTO.UserName)) return BadRequest("Email or username is already taken");
+            if (await UserExists(registerDTO.UserName)) return BadRequest("Email or username is already taken");
 
             using var hmac = new HMACSHA512();
 
             var user = new AppUser{
-                Email = registerDTO.Email.ToLower(),
                 UserName = registerDTO.UserName.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password)),
                 PasswordSalt = hmac.Key
@@ -37,7 +36,7 @@ namespace API.Controllers
 
             return new UserDTO
             {
-                Email = user.Email,
+                UserName = user.UserName,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -46,8 +45,8 @@ namespace API.Controllers
         public async Task<ActionResult<UserDTO>> Login(LoginDTO loginDTO){
 
             // Checking the username
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == loginDTO.Email);
-            if (user == null) return Unauthorized("Invalid email!");
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDTO.UserName);
+            if (user == null) return Unauthorized("Invalid username!");
 
             // Checking the password
             using var hmac = new HMACSHA512(user.PasswordSalt);
@@ -58,13 +57,13 @@ namespace API.Controllers
 
             return new UserDTO
             {
-                Email = user.Email,
+                UserName = user.UserName,
                 Token = _tokenService.CreateToken(user)
             };
         }
 
-        private async Task<bool> UserExists(string email, string username){
-            return await _context.Users.AnyAsync(x => (x.Email == email.ToLower()) || (x.UserName == username.ToLower()));
+        private async Task<bool> UserExists(string username){
+            return await _context.Users.AnyAsync(x => (x.UserName == username.ToLower()));
         }
     }
 }

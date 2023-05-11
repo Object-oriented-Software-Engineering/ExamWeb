@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using API.DTOs;
 using API.Interfaces;
 using AutoMapper;
@@ -50,16 +52,6 @@ namespace API.Controllers
         public async Task<ActionResult<MemberDTO>> GetProfessor(string username)
         {
             return await _userRepository.GetProfessorAsync(username);
-        }
-
-        [HttpPut("{username}/edit")]
-        public async Task<ActionResult> UpdateUser(string username, MemberUpdateDTO memberUpdateDTO)
-        {
-            var user = await _userRepository.GetUserByUsernameAsync(username);
-            if (user == null) return NotFound();
-            _mapper.Map(memberUpdateDTO, user);
-            if (await _userRepository.SaveAllASync()) return NoContent();
-            return BadRequest("Failed to update user!");
         }
     }
 }

@@ -11,8 +11,6 @@ namespace API.Helpers
             CreateMap<AppUser, MemberDTO>();
             CreateMap<Exam, ExamDTO>();
             CreateMap<Subject, SubjectDTO>();
-            CreateMap<MemberUpdateDTO, AppUser>()
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName.ToLower().Replace(" ","_")));
         }
     }
 }
