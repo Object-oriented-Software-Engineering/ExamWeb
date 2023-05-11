@@ -1,0 +1,25 @@
+.masthead {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+.navBar {
+    background-color: #323232 !important;
+    height: 90px;
+    width: 100%;
+    align-items: center;
+}
+
+.navTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    color: khaki;
+}
